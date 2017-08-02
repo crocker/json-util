@@ -2,9 +2,9 @@ name := "json-util"
 
 organization := "com.logicstack.util"
 
-version := "0.0.2"
+version := "0.0.4-SNAPSHOT"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.11"
 
 libraryDependencies ++= Seq(
   // json
@@ -15,3 +15,5 @@ libraryDependencies ++= Seq(
   //testing
   "org.specs2" %% "specs2-core" % "3.7.2" % "test"
 )
+
+enablePlugins(ConfigurationPlugin)
