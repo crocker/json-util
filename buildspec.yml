@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - sbt clean compile
+  post_build:
+    commands:
+      - sbt publish
