@@ -6,7 +6,7 @@ lazy val versions = new {
 
 name := "json-util"
 organization := "com.logicstack.util"
-version := "0.0.6-SNAPSHOT"
+version := "0.0.6"
 scalaVersion := versions.scala
 
 
@@ -29,17 +29,16 @@ resolvers ++= Seq(
   Resolver.defaultLocal,
   Resolver.sonatypeRepo("releases"),
   Resolver.sonatypeRepo("snapshots"),
-  "LogicStack Releases" at s"$artifactory/libs-release-local",
-  "LogicStack Snapshots" at s"$artifactory/libs-snapshot-local"
+  "Artifactory" at s"${artifactory}/lib-local/"
 )
 
 publishTo := {
   if (isSnapshot.value) {
-    Some("snapshots" at s"$artifactory/libs-snapshot-local")
+    Some("Artifactory Realm" at s"${artifactory}/lib-local;build.timestamp=" + new java.util.Date().getTime)
   }
   else {
-    Some("releases" at s"$artifactory/libs-release-local")
+    Some("Artifactory Realm" at s"${artifactory}/lib-local")
   }
 }
 
-credentials += Credentials("Artifactory Realm", "logicstack.jfrog.io", "admin", "AP4ChQULGXKGUk7QEoDNPWq9nUu")
+credentials += Credentials("Artifactory Realm", "logicstack.jfrog.io", "admin", "AP7GNvG4SqsADXdfxo3yGg9bTDy")
