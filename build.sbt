@@ -1,12 +1,12 @@
 lazy val versions = new {
   val scala = "2.11.11"
-  val jackson = "2.9.1"
+  val jackson = "2.8.4"
   val specs = "3.7.2"
 }
 
 name := "json-util"
 organization := "com.logicstack.util"
-version := "0.0.6"
+version := "0.0.7"
 scalaVersion := versions.scala
 
 
