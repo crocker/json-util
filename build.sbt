@@ -1,24 +1,27 @@
 lazy val versions = new {
-  val scala = "2.11.11"
-  val jackson = "2.8.4"
+  val scala = "2.12.5"
+  val jackson = "2.9.4"
   val specs = "3.7.2"
 }
 
 name := "json-util"
 organization := "com.logicstack.util"
-version := "0.0.7"
+version := "0.0.8"
 scalaVersion := versions.scala
 
 
 
 libraryDependencies ++= Seq(
   // json
+  "com.fasterxml.jackson.core" % "jackson-annotations" % versions.jackson,
+  "com.fasterxml.jackson.core" % "jackson-core" % versions.jackson,
+  "com.fasterxml.jackson.core" % "jackson-databind" % versions.jackson,
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % versions.jackson,
+  "com.fasterxml.jackson.module" % "jackson-module-paranamer" % versions.jackson,
   "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % versions.jackson,
+  "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % versions.jackson,
+  "com.fasterxml.jackson.datatype" % "jackson-datatype-joda" % versions.jackson,
   "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % versions.jackson,
-
-  //testing
-  "org.specs2" %% "specs2-core" % versions.specs % "test"
 )
 
 // publish settings
