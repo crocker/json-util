@@ -1,12 +1,11 @@
 lazy val versions = new {
   val scala = "2.12.5"
-  val jackson = "2.9.4"
-  val specs = "3.7.2"
+  val jackson = "2.8.4"
 }
 
 name := "json-util"
 organization := "com.logicstack.util"
-version := "0.0.8"
+version := "0.0.9"
 scalaVersion := versions.scala
 
 
@@ -21,7 +20,7 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % versions.jackson,
   "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % versions.jackson,
   "com.fasterxml.jackson.datatype" % "jackson-datatype-joda" % versions.jackson,
-  "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % versions.jackson,
+  "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % versions.jackson
 )
 
 // publish settings
