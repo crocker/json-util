@@ -33,14 +33,14 @@ resolvers ++= Seq(
   Resolver.sonatypeRepo("snapshots"),
   "Artifactory" at s"${artifactory}/lib-local/"
 )
-
-publishTo := {
-  if (isSnapshot.value) {
-    Some("Artifactory Realm" at s"${artifactory}/lib-local;build.timestamp=" + new java.util.Date().getTime)
-  }
-  else {
-    Some("Artifactory Realm" at s"${artifactory}/lib-local")
-  }
-}
-
-credentials += Credentials("Artifactory Realm", "logicstack.jfrog.io", "admin", "AP7GNvG4SqsADXdfxo3yGg9bTDy")
+//
+//publishTo := {
+//  if (isSnapshot.value) {
+//    Some("Artifactory Realm" at s"${artifactory}/lib-local;build.timestamp=" + new java.util.Date().getTime)
+//  }
+//  else {
+//    Some("Artifactory Realm" at s"${artifactory}/lib-local")
+//  }
+//}
+//
+//credentials += Credentials("Artifactory Realm", "logicstack.jfrog.io", "admin", "AP7GNvG4SqsADXdfxo3yGg9bTDy")
