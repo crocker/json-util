@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter
+import com.fasterxml.jackson.databind.ser.impl.{SimpleBeanPropertyFilter, SimpleFilterProvider}
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper, PropertyNamingStrategy}
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer
@@ -27,6 +27,7 @@ object JsonUtil {
     .configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false)
     .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true)
     .setDateFormat(new SimpleDateFormat(dateFormat))
+    .setFilterProvider(new SimpleFilterProvider().addFilter("display", filter))
 
   val SnakeCaseMapper = new ObjectMapper() with ScalaObjectMapper
   SnakeCaseMapper.registerModules(DefaultScalaModule, javaTimeModule)
@@ -35,5 +36,6 @@ object JsonUtil {
     .configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false)
     .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true)
     .setDateFormat(new SimpleDateFormat(dateFormat))
+    .setFilterProvider(new SimpleFilterProvider().addFilter("display", filter))
 
 }
