@@ -1,14 +1,12 @@
-lazy val versions = new {
-  val scala = "2.12.5"
-  val jackson = "2.8.4"
-}
-
 name := "json-util"
 organization := "com.logicstack.util"
-version := "0.0.10-SNAPSHOT"
+version := "0.0.11-SNAPSHOT"
 scalaVersion := versions.scala
 
-
+lazy val versions = new {
+  val scala = "2.12.5"
+  val jackson = "2.11.1"
+}
 
 libraryDependencies ++= Seq(
   // json
